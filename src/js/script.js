@@ -85,6 +85,7 @@ const select = {
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper =thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -130,7 +131,7 @@ const select = {
 
     processOrder() {
       const thisProduct = this;
-    
+      // console.log('thisProduct', this);
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
       console.log('formData', formData);
@@ -146,6 +147,12 @@ const select = {
         for(let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
+          let optionImage = thisProduct.imageWrapper.querySelector('[class~="' + paramId + '-' + optionId + '"]');
+          if(optionImage && !formData[paramId].includes(optionId)){
+            optionImage.classList.remove(classNames.menuProduct.imageVisible);
+          } else if(optionImage && formData[paramId].includes(optionId)){
+            optionImage.classList.add(classNames.menuProduct.imageVisible);
+          }
           if(!option.default && formData[paramId].includes(optionId)){
             price += option.price;
           } else if(option.default && !formData[paramId].includes(optionId)){
