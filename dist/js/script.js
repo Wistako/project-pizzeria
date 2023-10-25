@@ -261,7 +261,7 @@ const select = {
       thisCart.products = [];
 
       thisCart.getElements(element);
-
+      thisCart.initAction();
       console.log('new Cart', thisCart);
     }
 
@@ -271,7 +271,18 @@ const select = {
       thisCart.dom = {};
 
       thisCart.dom.wrapper = element;
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
+
+    initAction(){
+      const thisCart = this;
+      thisCart.dom.toggleTrigger.addEventListener('click', (event) =>{
+        event.preventDefault();
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      })
+    }
+
+
   }
   const app = {
     
@@ -286,6 +297,12 @@ const select = {
       const thisApp = this;
       thisApp.data = dataSource;
     },
+    initCart: function(){
+      const thisApp = this;
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+
+    },
     init: function(){
       const thisApp = this;
       console.log('*** App starting ***');
@@ -296,6 +313,7 @@ const select = {
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
