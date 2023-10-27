@@ -332,7 +332,10 @@
 
       thisCart.dom.productList.addEventListener('updated', function(){
         thisCart.update();
-      })
+      });
+      thisCart.dom.productList.addEventListener('remove', function(event){
+        thisCart.remove(event.detail.cartProduct);
+      });
     }
 
     add(menuProduct){
@@ -368,6 +371,15 @@
         totalPriceDOM.innerHTML = thisCart.totalPrice;
       }
     }
+    remove(cartProduct){
+      const thisCart = this;
+      const indexOfProduct = thisCart.products.indexOf(cartProduct);
+      thisCart.products.splice(indexOfProduct, 1);
+      thisCart.update();
+      console.log(indexOfProduct);
+      cartProduct.dom.wrapper.remove();
+      
+    }
   }
 
   class CartProduct{
@@ -382,9 +394,8 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
+      thisCartProduct.initActions();
 
-      thisCartProduct.dom.price.innerHTML = thisCartProduct.priceSingle;
-      debugger;
     }
     getElements(element){
       const thisCartProduct = this;
@@ -403,8 +414,32 @@
       thisCartProduct.dom.amountWidget.addEventListener('updated', () =>{
         thisCartProduct.amount = thisCartProduct.amountWidget.value;
         thisCartProduct.price = thisCartProduct.amount * thisCartProduct.priceSingle;
-        thisCartProduct.dom.subtotalPrice.innerHTML = thisCartProduct.price;
-      })
+      });
+      thisCartProduct.dom.price.innerHTML = thisCartProduct.priceSingle;
+    }
+    initActions(){
+      const thisCartProduct = this;
+      thisCartProduct.dom.edit.addEventListener('click', function(event){
+        event.preventDefault();
+
+      });
+      thisCartProduct.dom.remove.addEventListener('click', function(event){
+        event.preventDefault();
+        thisCartProduct.remove();
+      });
+    }
+    remove(){
+      const thisCartProduct = this;
+
+      const event = new CustomEvent('remove', {
+        bubbles: true,
+        detail: {
+          cartProduct: thisCartProduct,
+        },
+      });
+
+        console.log('działa');
+      thisCartProduct.dom.wrapper.dispatchEvent(event);
     }
   }
 
