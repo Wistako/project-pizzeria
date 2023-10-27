@@ -72,6 +72,11 @@
     cart: {
       defaultDeliveryFee: 20,
     },
+    db: {
+      url: '//localhost:3131',
+      products: 'products',
+      orders: 'order',
+    },
   };
 
   const templates = {
