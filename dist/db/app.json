@@ -204,52 +204,29 @@
   ],
   "order": [
     {
-      "address": "asffasf",
-      "phone": "23535",
-      "totalPrice": 96,
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
       "deliveryFee": 20,
-      "subtotalPrice": 76,
+      "subtotalPrice": 27,
       "products": [
         {
-          "id": "breakfast",
-          "amount": 4,
-          "price": 36,
-          "params": {
-            "coffee": {
-              "label": "Coffee type",
-              "options": {
-                "latte": "Latte"
-              }
-            }
-          }
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
         },
         {
-          "id": "pizza",
-          "amount": 2,
-          "price": 40,
-          "params": {
-            "sauce": {
-              "label": "Sauce",
-              "options": {
-                "tomato": "Tomato"
-              }
-            },
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "greenPeppers": "Green peppers",
-                "mushrooms": "Mushrooms",
-                "basil": "Fresh basil"
-              }
-            },
-            "crust": {
-              "label": "pizza crust",
-              "options": {
-                "standard": "standard"
-              }
-            }
-          }
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
         }
       ],
       "id": 1
@@ -260,31 +237,38 @@
       "totalPrice": 47,
       "deliveryFee": 20,
       "subtotalPrice": 27,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 3,
-          "price": 27,
-          "params": {}
-        }
-      ],
+      "products": [],
       "id": 2
     },
     {
       "address": "",
       "phone": "",
-      "totalPrice": 47,
       "deliveryFee": 20,
-      "subtotalPrice": 27,
+      "subtotalPrice": null,
+      "products": [],
+      "id": 3
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 38,
+      "deliveryFee": 20,
+      "subtotalPrice": 18,
       "products": [
         {
           "id": "cake",
-          "amount": 3,
-          "price": 27,
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
           "params": {}
         }
       ],
-      "id": 3
+      "id": 4
     },
     {
       "address": "",
@@ -300,7 +284,214 @@
           "params": {}
         }
       ],
-      "id": 4
+      "id": 5
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 74,
+      "deliveryFee": 20,
+      "subtotalPrice": 54,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 6
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 74,
+      "deliveryFee": 20,
+      "subtotalPrice": 54,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 2,
+          "price": 18,
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 4,
+          "price": 36,
+          "params": {}
+        }
+      ],
+      "id": 7
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 8
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 9
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 56,
+      "deliveryFee": 20,
+      "subtotalPrice": 36,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        },
+        {
+          "id": "breakfast",
+          "amount": 2,
+          "price": 18,
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "latte": "Latte"
+              }
+            }
+          }
+        }
+      ],
+      "id": 10
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 11
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 12
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 29,
+      "deliveryFee": 20,
+      "subtotalPrice": 9,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        }
+      ],
+      "id": 13
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 29,
+      "deliveryFee": 20,
+      "subtotalPrice": 9,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "params": {}
+        }
+      ],
+      "id": 14
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 15
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 47,
+      "deliveryFee": 20,
+      "subtotalPrice": 27,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        }
+      ],
+      "id": 16
     },
     {
       "address": "",
@@ -316,32 +507,25 @@
           "params": {}
         }
       ],
-      "id": 5
+      "id": 17
     },
     {
       "address": "",
       "phone": "",
-      "totalPrice": 74,
+      "totalPrice": 92,
       "deliveryFee": 20,
-      "subtotalPrice": 54,
+      "subtotalPrice": 72,
       "products": [
         {
-          "id": "breakfast",
-          "amount": 3,
-          "price": 27,
-          "params": {
-            "coffee": {
-              "label": "Coffee type",
-              "options": {
-                "latte": "Latte"
-              }
-            }
-          }
+          "id": "cake",
+          "amount": 4,
+          "price": 36,
+          "params": {}
         },
         {
           "id": "breakfast",
-          "amount": 3,
-          "price": 27,
+          "amount": 4,
+          "price": 36,
           "params": {
             "coffee": {
               "label": "Coffee type",
@@ -352,7 +536,7 @@
           }
         }
       ],
-      "id": 6
+      "id": 18
     }
   ]
 }

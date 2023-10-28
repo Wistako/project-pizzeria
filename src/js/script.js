@@ -35,6 +35,7 @@
     },
     cart: {
       productList: '.cart__order-summary',
+      products: '.cart__order-summary > li',
       toggleTrigger: '.cart__summary',
       totalNumber: `.cart__total-number`,
       totalPrice: '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
@@ -95,6 +96,7 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
+      console.log(data);
     }
 
     rednerInMenu(){
@@ -346,6 +348,7 @@
       thisCart.dom.formSubmit.addEventListener('click', (event) => {
         event.preventDefault();
         thisCart.sentOrder();
+        thisCart.removeAll();
       });
     }
 
@@ -392,7 +395,15 @@
       cartProduct.dom.wrapper.remove();
       
     }
-
+    removeAll(){
+      const thisCart = this;
+      thisCart.products.splice(0, thisCart.products.length)
+      const products = thisCart.dom.productList.querySelectorAll(select.cart.products);
+      for (const product of products){
+        product.remove();
+      }
+      thisCart.update();
+    }
     sentOrder(){
       const thisCart = this;
       const url = settings.db.url + '/' + settings.db.orders;
