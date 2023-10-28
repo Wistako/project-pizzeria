@@ -537,6 +537,70 @@
         }
       ],
       "id": 18
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 89,
+      "deliveryFee": 20,
+      "subtotalPrice": 69,
+      "products": [
+        {
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "espresso": "Espresso"
+              }
+            }
+          }
+        },
+        {
+          "id": "pizza",
+          "amount": 3,
+          "price": 60,
+          "params": {
+            "sauce": {
+              "label": "Sauce",
+              "options": {
+                "tomato": "Tomato"
+              }
+            },
+            "toppings": {
+              "label": "Toppings",
+              "options": {}
+            },
+            "crust": {
+              "label": "pizza crust",
+              "options": {
+                "cheese": "cheese in edges"
+              }
+            }
+          }
+        }
+      ],
+      "id": 19
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 0,
+      "deliveryFee": 20,
+      "subtotalPrice": -20,
+      "products": [],
+      "id": 20
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 0,
+      "deliveryFee": 20,
+      "subtotalPrice": -20,
+      "products": [],
+      "id": 21
     }
   ]
 }

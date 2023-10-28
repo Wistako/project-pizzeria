@@ -212,6 +212,8 @@
     addToCart(){
       const thisProduct = this;
       app.cart.add(thisProduct.prepareCartProduct());
+      document.querySelector(select.containerOf.menu).innerHTML = '';
+      app.initMenu();
     }
 
     prepareCartProduct(){
