@@ -35,7 +35,6 @@
     },
     cart: {
       productList: '.cart__order-summary',
-      products: '.cart__order-summary > li',
       toggleTrigger: '.cart__summary',
       totalNumber: `.cart__total-number`,
       totalPrice: '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
@@ -89,6 +88,7 @@
     constructor(id, data){
       const thisProduct = this;
       thisProduct.id = id;
+      thisProduct.dataDefault = data;
       thisProduct.data = data;
       thisProduct.rednerInMenu();
       thisProduct.getElements();
@@ -109,6 +109,23 @@
       const menuContainer = document.querySelector(select.containerOf.menu);
       // Add element to menu
       menuContainer.appendChild(thisProduct.element);
+    }
+    render(){
+      const thisProduct = this;
+      // Generate HTML
+      const generatedHTML = templates.menuProduct(thisProduct.data);
+      // Create element using utilis
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+      generatedDOM.classList.add(classNames.menuProduct.wrapperActive);
+      thisProduct.element.insertAdjacentElement('afterend',generatedDOM);
+      thisProduct.element.remove();
+      thisProduct.element = generatedDOM;
+
+      thisProduct.getElements();
+      thisProduct.initAccordion();
+      thisProduct.initOrderForm();
+      thisProduct.initAmountWidget();
+      thisProduct.processOrder();
     }
 
     getElements(){
@@ -212,10 +229,8 @@
     addToCart(){
       const thisProduct = this;
       app.cart.add(thisProduct.prepareCartProduct());
-      document.querySelector(select.containerOf.menu).innerHTML = '';
-      app.initMenu();
+      thisProduct.render();
     }
-
     prepareCartProduct(){
       const thisProduct = this;
       
