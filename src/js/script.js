@@ -35,6 +35,7 @@
     },
     cart: {
       productList: '.cart__order-summary',
+      products: '.cart__order-summary > li',
       toggleTrigger: '.cart__summary',
       totalNumber: `.cart__total-number`,
       totalPrice: '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
@@ -60,6 +61,7 @@
     },
     cart: {
       wrapperActive: 'active',
+      error: 'error',
     },
   };
 
@@ -88,7 +90,6 @@
     constructor(id, data){
       const thisProduct = this;
       thisProduct.id = id;
-      thisProduct.dataDefault = data;
       thisProduct.data = data;
       thisProduct.rednerInMenu();
       thisProduct.getElements();
@@ -308,6 +309,7 @@
       const thisWidget = this;
       thisWidget.dom.input.addEventListener('change', () =>{
          thisWidget.setValue(thisWidget.dom.input.value);
+         
       });
       thisWidget.dom.linkDecrease.addEventListener('click', (event) =>{
         event.preventDefault();
@@ -327,6 +329,7 @@
 
       thisCart.getElements(element);
       thisCart.initAction();
+      thisCart.update();
     }
 
     getElements(element){
@@ -365,7 +368,14 @@
       thisCart.dom.formSubmit.addEventListener('click', (event) => {
         event.preventDefault();
         thisCart.sentOrder();
-        thisCart.removeAll();
+      });
+      thisCart.dom.phone.addEventListener('change', (event) => {
+        event.preventDefault();
+        thisCart.validationOrder();
+      });
+      thisCart.dom.address.addEventListener('change', (event) => {
+        event.preventDefault();
+        thisCart.validationOrder();
       });
     }
 
@@ -423,33 +433,57 @@
     }
     sentOrder(){
       const thisCart = this;
-      const url = settings.db.url + '/' + settings.db.orders;
-      const payLoad = {};
-      payLoad.address = thisCart.dom.address.value;
-      payLoad.phone = thisCart.dom.phone.value;
-      payLoad.totalPrice = thisCart.totalPrice;
-      payLoad.deliveryFee = settings.cart.defaultDeliveryFee;
-      payLoad.subtotalPrice = thisCart.totalPrice - payLoad.deliveryFee;
-      payLoad.products =[];
 
-      for(let prod of thisCart.products){
-        payLoad.products.push(prod.getData());
+      if(thisCart.validationOrder()){
+        debugger;
+        thisCart.removeAll();
+        const url = settings.db.url + '/' + settings.db.orders;
+        const payLoad = {};
+        payLoad.address = thisCart.dom.address.value;
+        payLoad.phone = thisCart.dom.phone.value;
+        payLoad.totalPrice = thisCart.totalPrice;
+        payLoad.deliveryFee = settings.cart.defaultDeliveryFee;
+        payLoad.subtotalPrice = thisCart.totalPrice - payLoad.deliveryFee;
+        payLoad.products =[];
+        for(let prod of thisCart.products){
+          payLoad.products.push(prod.getData());
+        }
+        console.log('payLoad', payLoad);
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payLoad)
+        };
+        fetch(url, options)
+          .then(function(response){
+            return response.json();
+          }).then(function(parsedResponse){
+            console.log(parsedResponse);
+          })
       }
-      console.log('payLoad', payLoad);
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payLoad)
-      };
-      fetch(url, options)
-        .then(function(response){
-          return response.json();
-        }).then(function(parsedResponse){
-          console.log(parsedResponse);
-        })
+    }
+    validationOrder(){
+      const thisCart = this;
+      
+      const phoneValue = thisCart.dom.phone.value;
+      const addressValue = thisCart.dom.address.value;
 
+      const phoneFlag = (phoneValue.length == 9 && !phoneValue.startsWith('+48'))|| (phoneValue.length == 12 && phoneValue.startsWith('+48'));
+      const addressFlag = addressValue.length > 3;
+      const flag = thisCart.products.length > 0 && phoneFlag && addressFlag;
+      if(!phoneFlag){
+        thisCart.dom.phone.classList.add(classNames.cart.error);
+      } else {
+        thisCart.dom.phone.classList.remove(classNames.cart.error);
+      }
+      if(!addressFlag){
+        thisCart.dom.address.classList.add(classNames.cart.error);
+      } else {
+        thisCart.dom.address.classList.remove(classNames.cart.error);
+      }
+      return flag;
     }
   }
 

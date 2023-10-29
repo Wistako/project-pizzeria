@@ -6,3 +6,7 @@
 @import 'partials/cart';
 
 @import 'partials/product';
+.cart__order-confirmation .error{
+    border: 2.5px solid red;
+    border-radius: 4px;
+}
