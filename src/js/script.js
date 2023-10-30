@@ -365,7 +365,7 @@
         thisCart.remove(event.detail.cartProduct);
       });
 
-      thisCart.dom.formSubmit.addEventListener('click', (event) => {
+      thisCart.dom.form.addEventListener('submit', (event) => {
         event.preventDefault();
         thisCart.sentOrder();
       });
