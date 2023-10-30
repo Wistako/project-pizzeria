@@ -392,7 +392,6 @@
 
     update(){
       const thisCart = this;
-
       const deliveryFee = settings.cart.defaultDeliveryFee;
       let totalNumber = 0;
       let subtotalPrice = 0;
@@ -435,8 +434,6 @@
       const thisCart = this;
 
       if(thisCart.validationOrder()){
-        debugger;
-        thisCart.removeAll();
         const url = settings.db.url + '/' + settings.db.orders;
         const payLoad = {};
         payLoad.address = thisCart.dom.address.value;
@@ -462,6 +459,7 @@
           }).then(function(parsedResponse){
             console.log(parsedResponse);
           })
+        thisCart.removeAll();
       }
     }
     validationOrder(){
@@ -553,9 +551,22 @@
       data.amount = thisCartProduct.amount;
       data.price = thisCartProduct.price;
       data.name = thisCartProduct.name;
-      data.params = thisCartProduct.params;
+      data.params = thisCartProduct.prepareOrderProductParams();
 
       return data;
+    }
+    prepareOrderProductParams(){
+      const thisCartProduct = this;
+      const params = {};
+      const thisParams = thisCartProduct.params;
+      for(const param in thisParams){
+        params[param] = [];
+        const options = thisParams[param].options;
+        for(const option in options){
+          params[param].push(option);
+        }
+      }
+      return params;
     }
   }
 

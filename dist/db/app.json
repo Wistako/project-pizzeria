@@ -204,8 +204,26 @@
   ],
   "order": [
     {
-      "address": "",
-      "phone": "",
+      "address": "adsa",
+      "phone": "+48356293934",
+      "totalPrice": 0,
+      "deliveryFee": 20,
+      "subtotalPrice": -20,
+      "products": [],
+      "id": 1
+    },
+    {
+      "address": "adsa",
+      "phone": "+48356293934",
+      "totalPrice": 0,
+      "deliveryFee": 20,
+      "subtotalPrice": -20,
+      "products": [],
+      "id": 2
+    },
+    {
+      "address": "adsa",
+      "phone": "+48123456789",
       "totalPrice": 38,
       "deliveryFee": 20,
       "subtotalPrice": 18,
@@ -217,106 +235,115 @@
           "params": {}
         }
       ],
-      "id": 1
-    },
-    {
-      "address": "",
-      "phone": "",
-      "deliveryFee": 20,
-      "subtotalPrice": null,
-      "products": [],
-      "id": 2
-    },
-    {
-      "address": "",
-      "phone": "",
-      "deliveryFee": 20,
-      "subtotalPrice": null,
-      "products": [],
       "id": 3
     },
     {
-      "address": "",
-      "phone": "",
+      "address": "adsa",
+      "phone": "+48123456789",
+      "totalPrice": 40,
       "deliveryFee": 20,
-      "subtotalPrice": null,
-      "products": [],
+      "subtotalPrice": 20,
+      "products": [
+        {
+          "id": "pizza",
+          "amount": 1,
+          "price": 20,
+          "params": {
+            "sauce": {
+              "label": "Sauce",
+              "options": {
+                "tomato": "Tomato"
+              }
+            },
+            "toppings": {
+              "label": "Toppings",
+              "options": {
+                "olives": "Olives",
+                "redPeppers": "Red peppers",
+                "greenPeppers": "Green peppers",
+                "mushrooms": "Mushrooms",
+                "basil": "Fresh basil"
+              }
+            },
+            "crust": {
+              "label": "pizza crust",
+              "options": {
+                "standard": "standard"
+              }
+            }
+          }
+        }
+      ],
       "id": 4
     },
     {
-      "address": "1234",
-      "phone": "+48123456789",
-      "totalPrice": 38,
+      "address": "adsa",
+      "phone": "+48356293934",
+      "totalPrice": 49,
       "deliveryFee": 20,
-      "subtotalPrice": 18,
+      "subtotalPrice": 29,
       "products": [
         {
-          "id": "cake",
-          "amount": 2,
-          "price": 18,
-          "params": {}
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "params": {
+            "coffee": [
+              "latte"
+            ]
+          }
+        },
+        {
+          "id": "pizza",
+          "amount": 1,
+          "price": 20,
+          "params": {
+            "sauce": [
+              "tomato"
+            ],
+            "toppings": [
+              "olives",
+              "redPeppers",
+              "greenPeppers",
+              "mushrooms",
+              "basil"
+            ],
+            "crust": [
+              "standard"
+            ]
+          }
         }
       ],
       "id": 5
     },
     {
-      "address": "123rey",
-      "phone": "+48123456789",
-      "totalPrice": 29,
+      "address": "adsa",
+      "phone": "+48356293934",
+      "totalPrice": 56,
       "deliveryFee": 20,
-      "subtotalPrice": 9,
+      "subtotalPrice": 36,
       "products": [
         {
           "id": "cake",
+          "amount": 3,
+          "price": 27,
+          "params": {}
+        },
+        {
+          "id": "salad",
           "amount": 1,
           "price": 9,
-          "params": {}
+          "params": {
+            "ingredients": [
+              "cucumber",
+              "tomatoes",
+              "olives",
+              "herbs"
+            ]
+          }
         }
       ],
       "id": 6
-    },
-    {
-      "address": "adsa",
-      "phone": "+48123456789",
-      "totalPrice": 29,
-      "deliveryFee": 20,
-      "subtotalPrice": 9,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "params": {}
-        }
-      ],
-      "id": 7
-    },
-    {
-      "address": "adsa",
-      "phone": "+48123456789",
-      "totalPrice": 0,
-      "deliveryFee": 20,
-      "subtotalPrice": -20,
-      "products": [],
-      "id": 8
-    },
-    {
-      "address": "asffasf",
-      "phone": "+48123456789",
-      "totalPrice": 0,
-      "deliveryFee": 20,
-      "subtotalPrice": -20,
-      "products": [],
-      "id": 9
-    },
-    {
-      "address": "adsa",
-      "phone": "+48123456789",
-      "totalPrice": 0,
-      "deliveryFee": 20,
-      "subtotalPrice": -20,
-      "products": [],
-      "id": 10
     }
   ]
 }

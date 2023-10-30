@@ -140,6 +140,9 @@
     li {
       @include flex(row, center, space-between);
     }
+    li:last-child{
+      transition: opacity 0.5s;
+    }
   }
 
   &__order-confirmation {
