@@ -1,4 +1,5 @@
 @import 'partials/settings';
+@import 'partials/typography';
 @import 'partials/global';
 @import 'partials/elements';
 
@@ -6,11 +7,4 @@
 @import 'partials/cart';
 
 @import 'partials/product';
-.cart__order-confirmation .error{
-    border: 2.5px solid red;
-    border-radius: 4px;
-}
-.add-transition{
-    opacity: 0.5;
-    transition: none;
-}
+@import 'partials/booking';
