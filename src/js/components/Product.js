@@ -13,7 +13,6 @@ class Product{
     thisProduct.initOrderForm();
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
-    console.log(data);
   }
 
   rednerInMenu(){
