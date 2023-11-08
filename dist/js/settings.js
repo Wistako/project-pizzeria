@@ -29,7 +29,7 @@ export const select = {
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
-    dataPicker: {
+    datePicker: {
       wrapper: '.date-picker',
       input: 'input[name="date"]',
     },

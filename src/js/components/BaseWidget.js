@@ -4,7 +4,6 @@ class BaseWidget {
 
     thisWidget.dom = {};
     thisWidget.dom.wrapper = wrapperElement;
-
     thisWidget.correctValue = initialValue;
   }
   get value(){
@@ -20,14 +19,13 @@ class BaseWidget {
     if( newValue !== thisWidget.correctValue && thisWidget.isValid(newValue)){
       thisWidget.correctValue = newValue;
       thisWidget.announce();
-    } 
+    }
 
     thisWidget.renderValue();
   }
 
   setValue(value){
     const thisWidget = this;
-
     thisWidget.value = value;
   }
   
