@@ -43,7 +43,11 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    timePicker: '.time-picker',
     tablesMap: '.floor-plan',
+    phone: 'input[name="phone"]',
+    address: 'input[name="address"]',
+    starters: '.checkbox input[type="checkbox"][name="starter"]',
   },
   nav: {
     links: '.main-nav a',
