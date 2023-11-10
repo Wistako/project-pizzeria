@@ -1,6 +1,6 @@
 import { select, templates } from "../settings.js";
 import { utils } from "../utils.js";
-
+import Carousel from "./Carousel.js";
  class homePage{
   constructor(elem){
     const thisPage = this;
@@ -8,6 +8,7 @@ import { utils } from "../utils.js";
     thisPage.render(elem);
     thisPage.getElements();
     thisPage.initActions();
+    thisPage.initCarousel();
   }
   render(element){
     const thisPage = this;
@@ -22,6 +23,7 @@ import { utils } from "../utils.js";
     thisPage.dom.wrapper = thisPage.element;
     thisPage.dom.linkBooking = thisPage.wrapper.querySelector(select.banner.booking);
     thisPage.dom.linkOrder = thisPage.wrapper.querySelector(select.banner.order);
+    thisPage.dom.carousel = document.querySelector(select.containerOf.carousel);
   }
   initActions(){
     const thisPage = this;
@@ -57,6 +59,10 @@ import { utils } from "../utils.js";
 
        thisPage.element.dispatchEvent(evernt);
     })
+  }
+  initCarousel(){
+    const thisPage = this;
+    thisPage.carousel = new Carousel(thisPage.dom.carousel);
   }
 }
 
