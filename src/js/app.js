@@ -2,6 +2,7 @@ import {settings, select, classNames, templates} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import homePage from './components/homePage.js';
 
 const app = {
   initPages: function(){
@@ -13,7 +14,7 @@ const app = {
     const idFromHash = window.location.hash.replace('#/', '');
 
     let pageMatchingHash = thisApp.pages[0].id;
-
+    console.log(thisApp.pages);
     for(let page of thisApp.pages){
       if(page.id == idFromHash){
         pageMatchingHash = page.id;
@@ -90,6 +91,18 @@ const app = {
       thisApp.cart.add(event.detail.Product);
     })
   },
+  initHome(){
+    const thisApp = this;
+    
+    thisApp.homeElem = document.querySelector(select.containerOf.homePage);
+    thisApp.homePage = new homePage(thisApp.homeElem);
+    
+    
+    thisApp.homeElem.addEventListener('link', (e)=>{
+      thisApp.activatePage(e.detail.pageId);
+      console.log(e.detail.pageId);
+    })
+  },
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
@@ -101,6 +114,7 @@ const app = {
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initHome();
     thisApp.initBooking();
   },
 };
