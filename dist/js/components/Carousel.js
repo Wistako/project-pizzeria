@@ -9,7 +9,6 @@ class Carousel {
   }
   
   render(element){
-    console.log(element);
     const thisCarousel = this;
     const generatedHTML = templates.carousel();
     thisCarousel.element = utils.createDOMFromHTML(generatedHTML);

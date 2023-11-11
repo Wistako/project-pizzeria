@@ -5,6 +5,7 @@ export const select = {
     bookingWidget: '#template-booking-widget',
     banner: '#template-banner',
     carousel: '#template-carousel',
+    gallery: '#template-gallery',
   },
   containerOf: {
     menu: '#product-list',
@@ -13,6 +14,7 @@ export const select = {
     booking: '.booking-wrapper',
     homePage: '.home-wrapper',
     carousel: '.carousel-wrapper',
+    gallery: '.gallery-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -140,5 +142,6 @@ export const templates = {
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
   homePage: Handlebars.compile(document.querySelector(select.templateOf.banner).innerHTML),
-  carousel:Handlebars.compile(document.querySelector(select.templateOf.carousel).innerHTML),
+  carousel: Handlebars.compile(document.querySelector(select.templateOf.carousel).innerHTML),
+  gallery: Handlebars.compile(document.querySelector(select.templateOf.gallery).innerHTML),
 };

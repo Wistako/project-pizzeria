@@ -220,7 +220,6 @@ class Booking {
     thisBooking.dom.phone = thisBooking.element.querySelector(select.booking.phone);
     thisBooking.dom.address = thisBooking.element.querySelector(select.booking.address);
     thisBooking.dom.starters = thisBooking.element.querySelectorAll(select.booking.starters);
-    console.log(thisBooking.dom.starters)
   }
 
   initWidget(){

@@ -1,16 +1,18 @@
 import { select, templates } from "../settings.js";
 import { utils } from "../utils.js";
 import Carousel from "./Carousel.js";
+import Gallery from "./Gallery.js";
  class homePage{
-  constructor(elem){
+  constructor(banner){
     const thisPage = this;
 
-    thisPage.render(elem);
+    thisPage.renderBanner(banner);
     thisPage.getElements();
     thisPage.initActions();
     thisPage.initCarousel();
+    thisPage.initGallery();
   }
-  render(element){
+  renderBanner(element){
     const thisPage = this;
     const generatedHTML = templates.homePage();
     thisPage.wrapper = element;
@@ -24,6 +26,7 @@ import Carousel from "./Carousel.js";
     thisPage.dom.linkBooking = thisPage.wrapper.querySelector(select.banner.booking);
     thisPage.dom.linkOrder = thisPage.wrapper.querySelector(select.banner.order);
     thisPage.dom.carousel = document.querySelector(select.containerOf.carousel);
+    thisPage.dom.gallery = document.querySelector(select.containerOf.gallery);
   }
   initActions(){
     const thisPage = this;
@@ -63,6 +66,10 @@ import Carousel from "./Carousel.js";
   initCarousel(){
     const thisPage = this;
     thisPage.carousel = new Carousel(thisPage.dom.carousel);
+  }
+  initGallery(){
+    const thisPage = this;
+    thisPage.gallery = new Gallery(thisPage.dom.gallery);
   }
 }
 

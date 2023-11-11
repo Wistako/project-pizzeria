@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -67,6 +67,7 @@
     <section id="home">
       <div class="container home-wrapper"></div>
       <div class="carousel-wrapper container"></div>
+      <div class="container gallery-wrapper"></div>
     </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
@@ -75,6 +76,55 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
+  <script id="template-gallery" type="text/x-handlebars-template">
+    <div>
+      <div class="gallery">
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+        <div class="box-wrapper">
+          <div class="icons">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href=""><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="gallery-box"></div>
+        </div>
+      </div>
+      <a href="https://www.instagram.com">View more on Instagram</a>
+    </div>
+  </script>
     <script id="template-banner" type="text/x-handlebars-template">
       <div class="banner">
         <a href="#order" class="block order">
@@ -99,7 +149,8 @@
           </div>
           <div class="description">
             <h3>Lorem Ipsum</h3>
-            <p>Lorem Ipsum Lorem Ipsum LoremLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum  Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus euismod mauris, ut placerat diam. Suspendisse maximus nisl nisl, non lobortis lorem bibendum eu.</p>
+            <h5>-Margaret Dave</h5>
           </div>
         </div>
         <div class="carousel-cell">
@@ -108,7 +159,8 @@
           </div>
           <div class="description">
             <h3>Lorem Ipsum</h3>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus euismod mauris, ut placerat diam. Suspendisse maximus nisl nisl, non lobortis lorem bibendum eu.</p>
+            <h5>-Arthur Company</h5>
           </div>
         </div>
         <div class="carousel-cell">
@@ -117,7 +169,8 @@
           </div>
           <div class="description">
             <h3>Lorem Ipsum</h3>
-            <p>Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum  Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus euismod mauris, ut placerat diam. Suspendisse maximus nisl nisl, non lobortis lorem bibendum eu.</p>
+            <h5>-Marta Nawal</h5>
           </div>
 
         </div>
