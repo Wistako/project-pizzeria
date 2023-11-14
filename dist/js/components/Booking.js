@@ -59,12 +59,10 @@ class Booking {
         ]);
       })
       .then(function([bookings, eventsCurrent, eventsRepeat]){
-        // console.log(bookings);
-        // console.log(eventsCurrent);
-        // console.log(eventsRepeat);
-
-        thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);  
+        thisBooking.parsedData = thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
+        thisBooking.widget.hourPicker.fillRange(thisBooking.prepareBookingDay());
       });
+
   }
 
   parseData(bookings, eventsCurrent, eventsRepeat){
@@ -233,7 +231,35 @@ class Booking {
     thisBooking.dom.wrapper.addEventListener('updated', () =>{
       thisBooking.updateDOM();
     });
+    thisBooking.dom.datePicker.addEventListener('updated', () =>{
+      thisBooking.widget.hourPicker.fillRange(thisBooking.prepareBookingDay());
+    })
+    console.log(thisBooking.widget.datePicker.value);
   }
+  prepareBookingDay(){
+    const thisBooking = this;
+
+    const day = thisBooking.widget.datePicker.value;
+    let tablesAmount = [];
+
+    if(thisBooking.booked[day]){
+    
+      const dayBooked = thisBooking.booked[day];
+      for(let i = 12 ; i < 24 ; i += 0.5){
+        if(dayBooked[i]){
+          tablesAmount.push(dayBooked[i].length); 
+        } else{
+          tablesAmount.push(0);
+        }
+      }
+    } else {
+      for(let i = 12 ; i < 24 ; i += 0.5){
+        tablesAmount.push(0);
+      }
+    }
+    return tablesAmount
+  }
+
 
   prepareBookingParams(){
     const thisBooking = this;
@@ -283,9 +309,9 @@ class Booking {
     fetch(url, options)
     console.log(bookingParam);
     thisBooking.makeBooked(bookingParam.date, bookingParam.hour, bookingParam.duration, bookingParam.table);
-    console.log(thisBooking.booked);
     thisBooking.cleanTableMap();
     thisBooking.updateDOM();
+    thisBooking.widget.hourPicker.fillRange(thisBooking.prepareBookingDay());
   }
 }
 export default Booking;
