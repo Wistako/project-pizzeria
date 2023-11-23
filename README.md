@@ -1,3 +1,3 @@
 version 2.4
 
-https://project-pizzeria--wistako.repl.co/
+https://project-pizzeria.wistako.repl.co/
